@@ -24,6 +24,8 @@ class ExtendCounter extends Model
 
     protected $site = null;
 
+    protected $site2 = null;
+
     protected $type = null;
 
     protected $permission = null;
@@ -62,6 +64,8 @@ class ExtendCounter extends Model
 
     protected $lang = null;
 
+    protected $gdprAgreementAccepted = null;
+
     protected $mappingClasses = [
         'webvisor' => 'Yandex\Metrica\Management\Models\Webvisor',
         'codeOptions' => 'Yandex\Metrica\Management\Models\CodeOptions',
@@ -69,7 +73,8 @@ class ExtendCounter extends Model
         'filters' => 'Yandex\Metrica\Management\Models\Filters',
         'operations' => 'Yandex\Metrica\Management\Models\Operations',
         'grants' => 'Yandex\Metrica\Management\Models\Grants',
-        'monitoring' => 'Yandex\Metrica\Management\Models\Monitoring'
+        'monitoring' => 'Yandex\Metrica\Management\Models\Monitoring',
+        'site2' => 'Yandex\Metrica\Management\Models\Site2'
     ];
 
     protected $propNameMap = [
@@ -79,7 +84,8 @@ class ExtendCounter extends Model
         'filter_robots' => 'filterRobots',
         'time_zone_name' => 'timeZoneName',
         'visit_thresho_id' => 'visitThreshoId',
-        'include_undefined' => 'includeUndefined'
+        'include_undefined' => 'includeUndefined',
+        'gdpr_agreement_accepted' => 'gdprAgreementAccepted',
     ];
 
     /**
@@ -607,6 +613,42 @@ class ExtendCounter extends Model
     public function setLang($lang)
     {
         $this->lang = $lang;
+        return $this;
+    }
+
+    /**
+     * @return null
+     */
+    public function getSite2()
+    {
+        return $this->site2;
+    }
+
+    /**
+     * @param null $site2
+     * @return ExtendCounter
+     */
+    public function setSite2($site2)
+    {
+        $this->site2 = $site2;
+        return $this;
+    }
+
+    /**
+     * @return null
+     */
+    public function getGdprAgreementAccepted()
+    {
+        return $this->gdprAgreementAccepted;
+    }
+
+    /**
+     * @param null $gdprAgreementAccepted
+     * @return ExtendCounter
+     */
+    public function setGdprAgreementAccepted($gdprAgreementAccepted)
+    {
+        $this->gdprAgreementAccepted = $gdprAgreementAccepted;
         return $this;
     }
 }
