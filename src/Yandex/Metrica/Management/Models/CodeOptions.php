@@ -22,6 +22,8 @@ class CodeOptions extends Model
 
     protected $inOneLine = null;
 
+    protected $ecommerce = null;
+
     protected $mappingClasses = [
         'informer' => 'Yandex\Metrica\Management\Models\Informer'
     ];
@@ -29,7 +31,8 @@ class CodeOptions extends Model
     protected $propNameMap = [
         'track_hash' => 'trackHash',
         'xml_site' => 'xmlSite',
-        'in_one_line' => 'inOneLine'
+        'in_one_line' => 'inOneLine',
+        'ecommerce' => 'ecommerce'
     ];
 
     /**
@@ -183,6 +186,24 @@ class CodeOptions extends Model
     public function setInOneLine($inOneLine)
     {
         $this->inOneLine = $inOneLine;
+        return $this;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getEcommerce()
+    {
+        return $this->ecommerce;
+    }
+
+    /**
+     * @param $ecommerce
+     * @return $this
+     */
+    public function setEcommerce($ecommerce)
+    {
+        $this->ecommerce = $ecommerce;
         return $this;
     }
 }
