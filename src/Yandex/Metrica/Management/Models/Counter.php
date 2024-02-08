@@ -19,6 +19,7 @@ class Counter extends Model
     protected $name = null;
 
     protected $site = null;
+    protected $site2 = null;
 
     protected $type = null;
 
@@ -48,10 +49,13 @@ class Counter extends Model
 
     protected $maxRetargetingGoals = null;
 
+    protected $gdprAgreementAccepted = null;
+
     protected $mappingClasses = [
         'webvisor' => 'Yandex\Metrica\Management\Models\Webvisor',
         'codeOptions' => 'Yandex\Metrica\Management\Models\CodeOptions',
-        'monitoring' => 'Yandex\Metrica\Management\Models\Monitoring'
+        'monitoring' => 'Yandex\Metrica\Management\Models\Monitoring',
+        'site2' => 'Yandex\Metrica\Management\Models\Site2'
     ];
 
     protected $propNameMap = [
@@ -64,7 +68,8 @@ class Counter extends Model
         'visit_threshold' => 'visitThreshold',
         'max_goals' => 'maxGoals',
         'max_detailed_goals' => 'maxDetailedGoals',
-        'max_retargeting_goals' => 'maxRetargetingGoals'
+        'max_retargeting_goals' => 'maxRetargetingGoals',
+        'gdpr_agreement_accepted' => 'gdprAgreementAccepted',
     ];
 
     /**
@@ -482,6 +487,42 @@ class Counter extends Model
     public function setMaxRetargetingGoals($maxRetargetingGoals)
     {
         $this->maxRetargetingGoals = $maxRetargetingGoals;
+        return $this;
+    }
+
+    /**
+     * @return null
+     */
+    public function getSite2()
+    {
+        return $this->site2;
+    }
+
+    /**
+     * @param null $site2
+     * @return Counter
+     */
+    public function setSite2($site2)
+    {
+        $this->site2 = $site2;
+        return $this;
+    }
+
+    /**
+     * @return null
+     */
+    public function getGdprAgreementAccepted()
+    {
+        return $this->gdprAgreementAccepted;
+    }
+
+    /**
+     * @param $gdprAgreementAccepted
+     * @return Counter
+     */
+    public function setGdprAgreementAccepted($gdprAgreementAccepted)
+    {
+        $this->gdprAgreementAccepted = $gdprAgreementAccepted;
         return $this;
     }
 }
